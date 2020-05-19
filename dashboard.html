@@ -175,6 +175,9 @@
       let oLabels = $("#table-country-" + sType.toLowerCase() + "-labels"),
         oRows = $("#table-country-" + sType.toLowerCase() + "-rows"),
         oNumerFormat = new Intl.NumberFormat('nl-BE');
+      aLabels.forEach(sLabel => {
+        oLabels.append('<th>' + capFirstChar(sLabel) + '</th>');
+      });
     }
 
     function capFirstChar(sText) {
