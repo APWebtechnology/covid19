@@ -109,9 +109,31 @@
     let sBaseUrl = "https://apapi.herokuapp.com/api/covid19/";
 
     function getSummary() {
-      $.getJSON(sBaseUrl + 'csse-jhu/summary/table/global')
+      // $.getJSON(sBaseUrl + 'csse-jhu/summary/table/global')
+      //   .done(function (oData) {
+      //     fillTable(oData);
+      //     $("#spinner-summary").removeClass('visible');
+      //     $("#spinner-summary").addClass('invisible');
+      //     $(".summary").removeClass('invisible');
+      //     $(".summary").addClass('visible');
+      //   })
+      //   .fail(function (oError) {
+      //     console.log(oError);
+      //   });
+      $.getJSON(sBaseUrl + 'csse-jhu/summary/graph/new')
         .done(function (oData) {
-          fillTable(oData);
+          new Chart($("#globalNew"), oData);
+          $("#spinner-summary").removeClass('visible');
+          $("#spinner-summary").addClass('invisible');
+          $(".summary").removeClass('invisible');
+          $(".summary").addClass('visible');
+        })
+        .fail(function (oError) {
+          console.log(oError);
+        });
+      $.getJSON(sBaseUrl + 'csse-jhu/summary/graph/total')
+        .done(function (oData) {
+          new Chart($("#globalTotal"), oData);
           $("#spinner-summary").removeClass('visible');
           $("#spinner-summary").addClass('invisible');
           $(".summary").removeClass('invisible');
