@@ -128,6 +128,9 @@
       oData.rows.forEach(oRow => {
         let oHtmlRow = $('<tr></tr>');
         oHtmlRow.append('<td>' + oRow.type + '</td>');
+        oData.labels.forEach(sLabel => {
+          oHtmlRow.append('<td class="text-right">' + oRow[sLabel] + '</td>');
+        });
         oRows.append(oHtmlRow);
       });
     }
