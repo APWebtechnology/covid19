@@ -120,24 +120,31 @@
       //   .fail(function (oError) {
       //     console.log(oError);
       //   });
-      $.getJSON(sBaseUrl + 'csse-jhu/summary/graph/new')
+      // $.getJSON(sBaseUrl + 'csse-jhu/summary/graph/new')
+      //   .done(function (oData) {
+      //     new Chart($("#globalNew"), oData);
+      //     $("#spinner-summary").removeClass('visible');
+      //     $("#spinner-summary").addClass('invisible');
+      //     $(".summary").removeClass('invisible');
+      //     $(".summary").addClass('visible');
+      //   })
+      //   .fail(function (oError) {
+      //     console.log(oError);
+      //   });
+      // $.getJSON(sBaseUrl + 'csse-jhu/summary/graph/total')
+      //   .done(function (oData) {
+      //     new Chart($("#globalTotal"), oData);
+      //     $("#spinner-summary").removeClass('visible');
+      //     $("#spinner-summary").addClass('invisible');
+      //     $(".summary").removeClass('invisible');
+      //     $(".summary").addClass('visible');
+      //   })
+      //   .fail(function (oError) {
+      //     console.log(oError);
+      //   });
+      $.getJSON(sBaseUrl + 'csse-jhu/summary/table/countries')
         .done(function (oData) {
-          new Chart($("#globalNew"), oData);
-          $("#spinner-summary").removeClass('visible');
-          $("#spinner-summary").addClass('invisible');
-          $(".summary").removeClass('invisible');
-          $(".summary").addClass('visible');
-        })
-        .fail(function (oError) {
-          console.log(oError);
-        });
-      $.getJSON(sBaseUrl + 'csse-jhu/summary/graph/total')
-        .done(function (oData) {
-          new Chart($("#globalTotal"), oData);
-          $("#spinner-summary").removeClass('visible');
-          $("#spinner-summary").addClass('invisible');
-          $(".summary").removeClass('invisible');
-          $(".summary").addClass('visible');
+          console.log(oData);
         })
         .fail(function (oError) {
           console.log(oError);
