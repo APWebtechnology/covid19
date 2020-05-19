@@ -112,6 +112,10 @@
       $.getJSON(sBaseUrl + 'csse-jhu/summary/table/global')
         .done(function (oData) {
           fillTable(oData);
+          $("#spinner-summary").removeClass('visible');
+          $("#spinner-summary").addClass('invisible');
+          $(".summary").removeClass('invisible');
+          $(".summary").addClass('visible');
         })
         .fail(function (oError) {
           console.log(oError);
