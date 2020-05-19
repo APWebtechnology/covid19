@@ -178,6 +178,15 @@
       aLabels.forEach(sLabel => {
         oLabels.append('<th>' + capFirstChar(sLabel) + '</th>');
       });
+      aCountries.forEach(oRow => {
+        if (oRow.type === sType) {
+          let oHtmlRow = $('<tr></tr>');
+          aLabels.forEach(sLabel => {
+            oHtmlRow.append('<td>' + oRow[sLabel] + '</td>');
+          });
+          oRows.append(oHtmlRow);
+        }
+      });
     }
 
     function capFirstChar(sText) {
