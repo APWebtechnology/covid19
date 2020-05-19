@@ -121,8 +121,14 @@
     function fillTable(oData) {
       let oLabels = $("#table-labels"),
         oRows = $("#table-rows");
+      oLabels.append('<th></th>');
       oData.labels.forEach(sLabel => {
         oLabels.append('<th class="text-right">' + sLabel + '</th>');
+      });
+      oData.rows.forEach(oRow => {
+        let oHtmlRow = $('<tr></tr>');
+        oHtmlRow.append('<td>' + oRow.type + '</td>');
+        oRows.append(oHtmlRow);
       });
     }
 
