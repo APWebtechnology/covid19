@@ -119,7 +119,11 @@
     }
 
     function fillTable(oData) {
-      console.log(oData);
+      let oLabels = $("#table-labels"),
+        oRows = $("#table-rows");
+      oData.labels.forEach(sLabel => {
+        oLabels.append('<th class="text-right">' + sLabel + '</th>');
+      });
     }
 
     function fillCountryTable(aCountries, aLabels, sType) {
