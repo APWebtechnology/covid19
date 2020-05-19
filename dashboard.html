@@ -172,7 +172,9 @@
     }
 
     function fillCountryTable(aCountries, aLabels, sType) {
-
+      let oLabels = $("#table-country-" + sType.toLowerCase() + "-labels"),
+        oRows = $("#table-country-" + sType.toLowerCase() + "-rows"),
+        oNumerFormat = new Intl.NumberFormat('nl-BE');
     }
 
     function capFirstChar(sText) {
