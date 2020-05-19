@@ -182,7 +182,9 @@
         if (oRow.type === sType) {
           let oHtmlRow = $('<tr></tr>');
           aLabels.forEach(sLabel => {
-            oHtmlRow.append('<td>' + oRow[sLabel] + '</td>');
+            !!parseInt(oRow[sLabel]) || parseInt(oRow[sLabel]) === 0 ?
+              oHtmlRow.append('<td class="text-right">' + oNumerFormat.format(oRow[sLabel]) + '</td>') :
+              oHtmlRow.append('<td>' + oRow[sLabel] + '</td>');
           });
           oRows.append(oHtmlRow);
         }
