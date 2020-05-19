@@ -109,11 +109,17 @@
     let sBaseUrl = "https://apapi.herokuapp.com/api/covid19/";
 
     function getSummary() {
-
+      $.getJSON(sBaseUrl + 'csse-jhu/summary/table/global')
+        .done(function (oData) {
+          fillTable(oData);
+        })
+        .fail(function (oError) {
+          console.log(oError);
+        });
     }
 
     function fillTable(oData) {
-
+      console.log(oData);
     }
 
     function fillCountryTable(aCountries, aLabels, sType) {
