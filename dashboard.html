@@ -120,7 +120,8 @@
 
     function fillTable(oData) {
       let oLabels = $("#table-labels"),
-        oRows = $("#table-rows");
+        oRows = $("#table-rows"),
+        oNumerFormat = new Intl.NumberFormat('nl-BE');
       oLabels.append('<th></th>');
       oData.labels.forEach(sLabel => {
         oLabels.append('<th class="text-right">' + sLabel + '</th>');
@@ -129,7 +130,7 @@
         let oHtmlRow = $('<tr></tr>');
         oHtmlRow.append('<td>' + oRow.type + '</td>');
         oData.labels.forEach(sLabel => {
-          oHtmlRow.append('<td class="text-right">' + oRow[sLabel] + '</td>');
+          oHtmlRow.append('<td class="text-right">' + oNumerFormat.format(oRow[sLabel]) + '</td>');
         });
         oRows.append(oHtmlRow);
       });
