@@ -153,6 +153,15 @@
         },
         combined: []
       };
+
+      aRecords.forEach(oRecord => {
+        let oCombined = {
+          date: new Date(oRecord.date),
+          newCases: oRecord.cases,
+          newDeaths: oRecord.deaths
+        };
+        oStatistics.combined.push(oCombined);
+      });
     }
 
     function fillTable(oCountry) {
