@@ -120,6 +120,10 @@
       $.getJSON(sBaseUrl + 'ecdc/country/BE/graph')
         .done(function (oData) {
           new Chart($("#global"), oData);
+          $(".spinner").removeClass('visible');
+          $(".spinner").addClass('invisible');
+          $(".row").removeClass('invisible');
+          $(".row").addClass('visible');
         })
         .fail(function (oError) {
           console.log(oError);
