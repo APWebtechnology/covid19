@@ -147,6 +147,10 @@
         .done(function (oData) {
           fillCountryTable(oData, aLabels, "New");
           fillCountryTable(oData, aLabels, "Total");
+          $("#spinner-countries").removeClass('visible');
+          $("#spinner-countries").addClass('invisible');
+          $(".countries").removeClass('invisible');
+          $(".countries").addClass('visible');
         })
         .fail(function (oError) {
           console.log(oError);
