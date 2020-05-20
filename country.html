@@ -142,7 +142,17 @@
     }
 
     function calcCountry(aRecords) {
-
+      let oStatistics = {
+        summary: {
+          population: parseInt(aRecords[0].popData2018),
+          cases: 0,
+          deaths: 0,
+          casesPop: 0,
+          deathsPop: 0,
+          deathsPerc: 0
+        },
+        combined: []
+      };
     }
 
     function fillTable(oCountry) {
