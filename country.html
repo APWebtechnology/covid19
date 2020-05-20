@@ -183,7 +183,9 @@
         oRows = $('#table-rows');
 
       window.aLabels.forEach(sLabel => {
-        oLabels.append('<th>' + window.oTranslations[sLabel] + '</th>');
+        sLabel === 'date' ?
+          oLabels.append('<th>' + window.oTranslations[sLabel] + '</th>') :
+          oLabels.append('<th class="text-right">' + window.oTranslations[sLabel] + '</th>');
       });
 
       oCountry.combined.forEach(oRow => {
