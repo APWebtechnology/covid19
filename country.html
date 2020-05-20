@@ -169,6 +169,10 @@
         oStatistics.combined.push(oCombined);
       });
 
+      oStatistics.summary.casesPop = oStatistics.summary.cases / oStatistics.summary.population;
+      oStatistics.summary.deathsPop = oStatistics.summary.deaths / oStatistics.summary.population;
+      oStatistics.summary.deathsPerc = oStatistics.summary.deaths / oStatistics.summary.cases;
+
       return oStatistics;
     }
 
