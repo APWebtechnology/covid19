@@ -189,7 +189,9 @@
       oCountry.combined.forEach(oRow => {
         let oHtmlRow = $('<tr></tr>');
         window.aLabels.forEach(sLabel => {
-          oHtmlRow.append('<td>' + oRow[sLabel] + '</td>');
+          sLabel === 'date' ?
+            oHtmlRow.append('<td>' + oRow[sLabel].toDateString() + '</td>') :
+            oHtmlRow.append('<td class="text-right">' + oNumberFormat.format(oRow[sLabel]) + '</td>');
         });
         oRows.append(oHtmlRow);
       });
