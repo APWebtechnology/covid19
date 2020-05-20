@@ -119,7 +119,7 @@
     function getSummary() {
       $.getJSON(sBaseUrl + 'ecdc/country/BE/table')
         .done(function (oData) {
-          console.log(oData);
+          console.log(calcCountry(oData));
           $(".spinner").removeClass('visible');
           $(".spinner").addClass('invisible');
           $(".table-responsive").removeClass('invisible');
@@ -168,6 +168,8 @@
 
         oStatistics.combined.push(oCombined);
       });
+
+      return oStatistics;
     }
 
     function fillTable(oCountry) {
