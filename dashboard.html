@@ -176,7 +176,9 @@
         oRows = $("#table-country-" + sType.toLowerCase() + "-rows"),
         oNumerFormat = new Intl.NumberFormat('nl-BE');
       aLabels.forEach(sLabel => {
-        oLabels.append('<th>' + capFirstChar(sLabel) + '</th>');
+        sLabel === capFirstChar(sLabel) ?
+          oLabels.append('<th class="text-right">' + sLabel + '</th>') :
+          oLabels.append('<th>' + capFirstChar(sLabel) + '</th>');
       });
       aCountries.forEach(oRow => {
         if (oRow.type === sType) {
