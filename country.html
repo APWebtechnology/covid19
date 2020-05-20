@@ -188,6 +188,9 @@
 
       oCountry.combined.forEach(oRow => {
         let oHtmlRow = $('<tr></tr>');
+        window.aLabels.forEach(sLabel => {
+          oHtmlRow.append('<td>' + oRow[sLabel] + '</td>');
+        });
         oRows.append(oHtmlRow);
       });
 
