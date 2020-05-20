@@ -119,7 +119,7 @@
     function getSummary() {
       $.getJSON(sBaseUrl + 'ecdc/country/BE/table')
         .done(function (oData) {
-          console.log(calcCountry(oData));
+          fillTable(calcCountry(oData));
           $(".spinner").removeClass('visible');
           $(".spinner").addClass('invisible');
           $(".table-responsive").removeClass('invisible');
@@ -177,6 +177,12 @@
     }
 
     function fillTable(oCountry) {
+      for (let sProp in oCountry.summary) {
+        if (oCountry.summary.hasOwnProperty(sProp)) {
+          let oElement = $('#' + sProp);
+          oElement.html(oCountry.summary[sProp]);
+        }
+      }
     }
   </script>
 </body>
