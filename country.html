@@ -117,6 +117,13 @@
     let sBaseUrl = "https://apapi.herokuapp.com/api/covid19/";
 
     function getSummary() {
+      $.getJSON(sBaseUrl + 'ecdc/country/BE/graph')
+        .done(function (oData) {
+          new Chart($("#global"), oData);
+        })
+        .fail(function (oError) {
+          console.log(oError);
+        });
     }
 
     function calcCountry(aRecords) {
