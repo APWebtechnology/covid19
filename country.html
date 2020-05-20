@@ -177,10 +177,14 @@
     }
 
     function fillTable(oCountry) {
+      let oNumberFormat = new Intl.NumberFormat('nl-BE'),
+        oPercFormat = new Intl.NumberFormat('nl-BE', { style: 'percent', maximumFractionDigits: 2 });
       for (let sProp in oCountry.summary) {
         if (oCountry.summary.hasOwnProperty(sProp)) {
           let oElement = $('#' + sProp);
-          oElement.html(oCountry.summary[sProp]);
+          parseInt(oCountry.summary[sProp]) === oCountry.summary[sProp] ?
+            oElement.html(oNumberFormat.format(oCountry.summary[sProp])) :
+            oElement.html(oPercFormat.format(oCountry.summary[sProp]))
         }
       }
     }
