@@ -160,6 +160,10 @@
           newCases: oRecord.cases,
           newDeaths: oRecord.deaths
         };
+
+        oStatistics.summary.cases += oRecord.cases;
+        oStatistics.summary.deaths += oRecord.deaths;
+
         oStatistics.combined.push(oCombined);
       });
     }
