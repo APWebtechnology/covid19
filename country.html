@@ -186,6 +186,11 @@
         oLabels.append('<th>' + window.oTranslations[sLabel] + '</th>');
       });
 
+      oCountry.combined.forEach(oRow => {
+        let oHtmlRow = $('<tr></tr>');
+        oRows.append(oHtmlRow);
+      });
+
       for (let sProp in oCountry.summary) {
         if (oCountry.summary.hasOwnProperty(sProp)) {
           let oElement = $('#' + sProp);
