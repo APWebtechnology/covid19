@@ -158,7 +158,9 @@
         let oCombined = {
           date: new Date(oRecord.date),
           newCases: oRecord.cases,
-          newDeaths: oRecord.deaths
+          newDeaths: oRecord.deaths,
+          cumulCases: oStatistics.summary.cases + oRecord.cases,
+          cumulDeaths: oStatistics.summary.deaths + oRecord.deaths
         };
 
         oStatistics.summary.cases += oRecord.cases;
