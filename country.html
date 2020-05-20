@@ -183,7 +183,7 @@
         oRows = $('#table-rows');
 
       window.aLabels.forEach(sLabel => {
-        oLabels.append('<th>' + sLabel + '</th>');
+        oLabels.append('<th>' + window.oTranslations[sLabel] + '</th>');
       });
 
       for (let sProp in oCountry.summary) {
